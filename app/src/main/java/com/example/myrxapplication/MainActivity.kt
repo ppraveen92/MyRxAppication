@@ -8,7 +8,7 @@ import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.schedulers.Schedulers.*
 
 /*
 * Just an example for observable,observer and operator with fromiteratable operator
@@ -21,8 +21,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val observable: Observable<Person> = Observable
             .fromIterable(createPersonList())
-            .subscribeOn(Schedulers.io())
+            .subscribeOn(io())
             .observeOn(AndroidSchedulers.mainThread())
+
         observable.subscribe(object : Observer<Person> {
             override fun onComplete() {
                 Log.d(MyTAG.mainTag, "onCompleted")
@@ -42,8 +43,6 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-
-
 object MyTAG {
     const val mainTag = "MAIN_TAG"
     const val flowableTag = "flowableTag"
@@ -53,5 +52,11 @@ object MyTAG {
         mutableList.add(Person("Syam", "engineer"))
         mutableList.add(Person("Manu", "doctor"))
         return mutableList
+    }
+
+    fun createPersonArray(): Array<Person> {
+        val personArray: Array<Person> =
+            arrayOf(Person("Syam", "engineer"), Person("Manu", "doctor"))
+        return personArray
     }
 }

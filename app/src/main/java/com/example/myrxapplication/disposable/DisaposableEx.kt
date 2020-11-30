@@ -12,6 +12,11 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
+/*
+* Disposable : Observer is no longer used , then it has to clear by adding the observer disposable into
+*  CompositeDisposable and clear that list
+*
+* */
 class DisaposableEx : AppCompatActivity() {
     var compositeDisposable: CompositeDisposable? = null
 

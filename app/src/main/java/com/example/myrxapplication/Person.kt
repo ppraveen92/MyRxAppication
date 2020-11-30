@@ -1,3 +1,3 @@
 package com.example.myrxapplication
 
-data class Person(var name:String,val designation:String)
+data class Person(var name: String, var designation: String)
