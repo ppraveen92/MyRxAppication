@@ -55,8 +55,8 @@ object MyTAG {
     }
 
     fun createPersonArray(): Array<Person> {
-        val personArray: Array<Person> =
-            arrayOf(Person("Syam", "engineer"), Person("Manu", "doctor"))
-        return personArray
+        return arrayOf(Person("Syam", "engineer"), Person("Manu", "doctor"))
     }
+
+    fun createPerson(): Person = Person("Syam", "engineer")
 }
