@@ -1,66 +1,41 @@
 package com.example.myrxapplication
 
-import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import com.example.myrxapplication.MyTAG.createPersonList
+
 import com.example.myrxapplication.operators.*
 import com.example.myrxapplication.transformOperator.showBuffer
 import com.example.myrxapplication.transformOperator.showConcatMap
 import com.example.myrxapplication.transformOperator.showFlatMap
 import com.example.myrxapplication.transformOperator.showMap
-import io.reactivex.Observable
-import io.reactivex.Observer
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers.*
 
 /*
-* Just an example for observable,observer and operator with fromiteratable operator
+* Operator explained here. When is used to jump to that  1)create 2)Filter 3)FromArray 4)Callable 5)Iterable 6)Interval
+* 7)Just 8)Range\n9)Take 10)TakeWhile 11)Timer 12)Buffer 13)ConcatMap 14)FlatMap 15)Map 16)Repeat
 *
 * */
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val observable: Observable<Person> = Observable
-            .fromIterable(createPersonList())
-            .subscribeOn(io())
-            .observeOn(AndroidSchedulers.mainThread())
-
-        observable.subscribe(object : Observer<Person> {
-            override fun onComplete() {
-                Log.d(MyTAG.mainTag, "onCompleted")
-            }
-
-            override fun onSubscribe(d: Disposable) {
-            }
-
-            override fun onNext(t: Person) {
-                Log.d(MyTAG.mainTag, "onNext : " + t.name)
-            }
-
-            override fun onError(e: Throwable) {
-                Log.e(MyTAG.mainTag, "onError :" + e.message)
-            }
-        })
-        showCreate()
-        showFilter()
-        showFromArray()
-        showCallable()
-        showFromIterable()
-        showInterval()
-        showJust()
-        showrange()
-        showRepeat()
-        showTakeOperator()
-        showTakeWhile()
-        showTimer()
-        showBuffer()
-        showConcatMap()
-        showFlatMap()
-        showMap()
+class MainClass {
+    fun main(args: Array<String>) {
+        println("${R.string.user_input}")
+        println("${R.string.please_enter_the_specified_number}")
+        when (readLine()) {
+            "1" -> showCreate()
+            "2" -> showFilter()
+            "3" -> showFromArray()
+            "4" -> showCallable()
+            "5" -> showFromIterable()
+            "6" -> showInterval()
+            "7" -> showJust()
+            "8" -> showrange()
+            "9" -> showTakeOperator()
+            "10" -> showTakeWhile()
+            "11" -> showTimer()
+            "12" -> showBuffer()
+            "13" -> showConcatMap()
+            "14" -> showFlatMap()
+            "15" -> showMap()
+            "16" -> showRepeat()
+            else -> print("Unknown input")
+        }
     }
 }
 

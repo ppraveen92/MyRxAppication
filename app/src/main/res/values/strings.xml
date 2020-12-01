@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyRxApplication</string>
+    <string name="please_enter_the_specified_number">Please Enter the specified number above to go through the sample</string>
+    <string name="user_input">1)create 2)Filter 3)FromArray 4)Callable 5)Iterable 6)Interval 7)Just 8)Range\n9)Take 10)TakeWhile" +
+                    "11)Timer 12)Buffer 13)ConcatMap 14)FlatMap 15)Map 16)Repeat</string>
 </resources>

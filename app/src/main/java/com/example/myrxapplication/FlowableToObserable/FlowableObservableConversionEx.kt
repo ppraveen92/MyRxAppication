@@ -11,7 +11,7 @@ import org.reactivestreams.Subscription
 *
 * */
 
-fun showConvertion() {
+fun main() {
     val observable: Observable<Int> = Observable.just(1, 2, 3)
     val floawable: Flowable<Int> = observable.toFlowable(BackpressureStrategy.BUFFER)
     floawable.subscribe(object : FlowableSubscriber<Int> {

@@ -12,7 +12,7 @@ import org.reactivestreams.Subscription
 * Handling Backpressure with flowable with bufferstrategy
 * */
 
-fun showFlowable() {
+fun main() {
     Flowable.range(0, 10000)
         .onBackpressureBuffer()
         .observeOn(Schedulers.computation())
