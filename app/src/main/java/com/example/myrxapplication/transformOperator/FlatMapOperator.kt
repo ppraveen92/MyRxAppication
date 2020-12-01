@@ -14,13 +14,14 @@ import io.reactivex.schedulers.Schedulers
 *
 * */
 fun showFlatMap() {
-    val observable = Observable.just("Manu", "Sonu", "Anil")
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
+    val observable = Observable
+        .just("Manu", "Sonu", "Anil")
         .flatMap { m ->
             Observable.just(m + " 2")
                 .subscribeOn(Schedulers.io())
         }
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
     observable.subscribe(object : Observer<String> {
         override fun onComplete() {
             Log.d(MyTAG.mainTag, "onComplete")

@@ -16,9 +16,7 @@ import io.reactivex.schedulers.Schedulers
 fun showBuffer() {
     val observable: Observable<Person> = Observable
         .fromIterable(createPersonList())
-        .subscribeOn(
-            Schedulers.io()
-        )
+        .subscribeOn(Schedulers.io())
 
     observable.buffer(2)
         .subscribe(object : Observer<MutableList<Person>> {
@@ -30,6 +28,7 @@ fun showBuffer() {
             }
 
             override fun onNext(t: MutableList<Person>) {
+                Log.d(MyTAG.mainTag, "Bundles ...")
                 for (person in t) {
                     Log.d(MyTAG.mainTag, "onNext : ${person.name}")
                 }

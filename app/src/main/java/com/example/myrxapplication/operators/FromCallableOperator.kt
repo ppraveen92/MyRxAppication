@@ -17,9 +17,10 @@ import io.reactivex.schedulers.Schedulers
 
 @SuppressLint("CheckResult")
 fun showCallable() {
-    val observable = Observable.fromCallable<Person> {
-        return@fromCallable createPerson()
-    }
+    val observable = Observable
+        .fromCallable<Person> {
+            return@fromCallable createPerson()
+        }
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 
