@@ -4,6 +4,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myrxapplication.MyTAG.createPersonList
+import com.example.myrxapplication.operators.*
+import com.example.myrxapplication.transformOperator.showBuffer
+import com.example.myrxapplication.transformOperator.showConcatMap
+import com.example.myrxapplication.transformOperator.showFlatMap
+import com.example.myrxapplication.transformOperator.showMap
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -40,6 +45,22 @@ class MainActivity : AppCompatActivity() {
                 Log.e(MyTAG.mainTag, "onError :" + e.message)
             }
         })
+        showCreate()
+        showFilter()
+        showFromArray()
+        showCallable()
+        showFromIterable()
+        showInterval()
+        showJust()
+        showrange()
+        showRepeat()
+        showTakeOperator()
+        showTakeWhile()
+        showTimer()
+        showBuffer()
+        showConcatMap()
+        showFlatMap()
+        showMap()
     }
 }
 

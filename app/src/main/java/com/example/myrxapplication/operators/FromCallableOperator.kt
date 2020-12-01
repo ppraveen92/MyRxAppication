@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers
 * */
 
 @SuppressLint("CheckResult")
-fun main() {
+fun showCallable() {
     val observable = Observable.fromCallable<Person> {
         return@fromCallable createPerson()
     }

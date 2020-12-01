@@ -37,5 +37,4 @@ fun showFlatMap() {
             Log.d(MyTAG.mainTag, "onError")
         }
     })
-
 }
