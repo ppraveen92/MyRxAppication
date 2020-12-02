@@ -1,6 +1,5 @@
 package com.example.myrxapplication
 
-
 import com.example.myrxapplication.operators.*
 import com.example.myrxapplication.transformOperator.showBuffer
 import com.example.myrxapplication.transformOperator.showConcatMap
@@ -18,22 +17,22 @@ class MainClass {
         println("${R.string.user_input}")
         println("${R.string.please_enter_the_specified_number}")
         when (readLine()) {
-            "1" -> showCreate()
-            "2" -> showFilter()
-            "3" -> showFromArray()
-            "4" -> showCallable()
-            "5" -> showFromIterable()
-            "6" -> showInterval()
-            "7" -> showJust()
-            "8" -> showrange()
-            "9" -> showTakeOperator()
-            "10" -> showTakeWhile()
-            "11" -> showTimer()
-            "12" -> showBuffer()
-            "13" -> showConcatMap()
-            "14" -> showFlatMap()
-            "15" -> showMap()
-            "16" -> showRepeat()
+            Constants.Create -> showCreate()
+            Constants.Filter -> showFilter()
+            Constants.FromArray -> showFromArray()
+            Constants.Callable -> showCallable()
+            Constants.Iterable -> showFromIterable()
+            Constants.Interval -> showInterval()
+            Constants.Just -> showJust()
+            Constants.Range -> showrange()
+            Constants.Take -> showTakeOperator()
+            Constants.TakeWhile -> showTakeWhile()
+            Constants.Timer -> showTimer()
+            Constants.Buffer -> showBuffer()
+            Constants.ConcatMap -> showConcatMap()
+            Constants.FlatMap -> showFlatMap()
+            Constants.Map -> showMap()
+            Constants.Repeat -> showRepeat()
             else -> print("Unknown input")
         }
     }

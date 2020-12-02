@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers
 fun showTakeOperator() {
     val observable: Observable<Person> = Observable
         .fromIterable(createPersonList())
-        .take(3)
+        .take(1)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 
